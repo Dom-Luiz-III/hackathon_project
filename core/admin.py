@@ -1,8 +1,10 @@
+from django.utils.html import format_html
 from django.contrib import admin
-from .models import (Usuario, Aluno, AutoAvaliacao, Professor, Curso, 
+from .models import (Usuario, Aluno, AutoAvaliacao, Professor, Curso,
                      Disciplina, TurmaDisciplina, Avaliacao, Turma, Criterio, AvaliacoesAluno)
 
 # Utilize os decorators para registrar os modelos
+
 
 @admin.register(Usuario)
 class UsuarioAdmin(admin.ModelAdmin):
@@ -11,9 +13,15 @@ class UsuarioAdmin(admin.ModelAdmin):
 
 @admin.register(Aluno)
 class AlunoAdmin(admin.ModelAdmin):
-    list_display = ['alu_nome', 'alu_email', 'alu_num_matricula']
+    list_display = ['alu_nome', 'alu_email', 'alu_num_matricula', 'display_foto']
     search_fields = ['alu_nome', 'alu_email']
     list_filter = ('alu_nome',)
+
+    def display_foto(self, obj):
+        return format_html('<img src="{}" width="150" height="100" style="border-radius: 10px" />', obj.alu_foto.url)
+
+    display_foto.short_description = 'Foto'
+
 
 
 @admin.register(AutoAvaliacao)

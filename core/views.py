@@ -12,3 +12,17 @@ def index(request):
         # 'curso': 'Programação Web com Django Framework',
     }
     return render(request, 'index.html', context)
+
+def login(request):
+
+    context = {
+        # 'curso': 'Programação Web com Django Framework',
+    }
+    return render(request, 'login.html', context)
+
+def home(request):
+
+    context = {
+        # 'curso': 'Programação Web com Django Framework',
+    }
+    return render(request, 'home.html', context)

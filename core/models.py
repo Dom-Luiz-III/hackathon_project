@@ -12,7 +12,7 @@ class Aluno(models.Model):
     alu_nome = models.CharField(max_length=255)
     alu_email = models.EmailField(unique=True)
     alu_senha = models.IntegerField()  
-    prof_foto = models.ImageField(upload_to='fotos_professores/', default='static/images/sem_foto.jpg')
+    alu_foto = models.ImageField('Foto',upload_to='media/alunos', default='static/images/sem_foto.jpg' , null=True, blank=True)
     alu_num_matricula = models.IntegerField()
     
     def __str__(self):
@@ -20,8 +20,8 @@ class Aluno(models.Model):
     
     # Se a imagem existir, ela será exibida. Caso contrário, a imagem padrão sem_foto.jpg será exibida:
     def foto_tag(self):
-        if self.foto:
-            return mark_safe('<img src="{}" width="50" height="50" />'.format(self.foto.url))
+        if self.alu_foto:
+            return mark_safe('<img src="{}" width="50" height="50" />'.format(self.alu_foto.url))
         else:
             default_image_path = 'core/images/sem_foto.jpg'
             return mark_safe('<img src="{}" width="50" height="50" />'.format(default_image_path))
@@ -30,8 +30,8 @@ class Aluno(models.Model):
 
     # Verifica se a foto está em branco e, se estiver, atribui o caminho da imagem padrão
     def save(self, *args, **kwargs):
-        if not self.foto:
-            self.foto = 'alunos/sem_foto.jpg'
+        if not self.alu_foto:
+            self.alu_foto = 'alunos/sem_foto.jpg'
 
         super(Aluno, self).save(*args, **kwargs)
 
@@ -46,7 +46,7 @@ class AutoAvaliacao(models.Model):
 class Professor(models.Model):
     prof_nome = models.CharField(max_length=255)
     prof_sobrenome = models.CharField(max_length=255)
-    prof_foto = models.ImageField(upload_to='fotos_professores/', default='static/images/sem_foto.jpg')
+    prof_foto = models.ImageField(upload_to='media/professores', default='static/images/sem_foto.jpg')
     prof_telefone = models.CharField(max_length=20)
 
     def __str__(self):
@@ -54,8 +54,8 @@ class Professor(models.Model):
     
      # Se a imagem existir, ela será exibida. Caso contrário, a imagem padrão sem_foto.jpg será exibida:
     def foto_tag(self):
-        if self.foto:
-            return mark_safe('<img src="{}" width="50" height="50" />'.format(self.foto.url))
+        if self.prof_foto:
+            return mark_safe('<img src="{}" width="50" height="50" />'.format(self.prof_foto.url))
         else:
             default_image_path = 'core/images/sem_foto.jpg'
             return mark_safe('<img src="{}" width="50" height="50" />'.format(default_image_path))
@@ -64,8 +64,8 @@ class Professor(models.Model):
 
     # Verifica se a foto está em branco e, se estiver, atribui o caminho da imagem padrão
     def save(self, *args, **kwargs):
-        if not self.foto:
-            self.foto = 'professores/sem_foto.jpg'
+        if not self.prof_foto:
+            self.prof_foto = 'professores/sem_foto.jpg'
 
         super(Professor, self).save(*args, **kwargs)
 

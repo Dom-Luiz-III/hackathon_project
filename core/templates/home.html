@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'images/logo2.ico' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+  <link rel="icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
+  <title>Nota Certa - Página Inicial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body class="bg-light">
+
+  <header>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Notas e Avaliações</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="homealuno">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Turma</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Avaliações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Disciplina</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Avaliações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ajuda</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="navbar-brand mx-auto titulo d-inline-block align-text-top text-bg-dark" href="home">
+          Voltar a Home
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mt-5">
+    <br><br><br>
+    <h2 class="mb-4">Turmas</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Sala</th>
+          <th scope="col">Turno</th>
+          <th scope="col">Professor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>T0943</td>
+          <td>82526</td>
+          <td>Matutino</td>
+          <td>Ingrid</td>
+        </tr>
+        <tr>
+          <td>T0943</td>
+          <td>82860</td>
+          <td>Vespertino</td>
+          <td>Moisés</td>
+        </tr>
+        <tr>
+            <td>T9943</td>
+            <td>82479</td>
+            <td>Noturno</td>
+            <td>Phillipe</td>
+          </tr>
+          <tr>
+            <td>T5743</td>
+            <td>82860</td>
+            <td>Matutino</td>
+            <td>Phillipe</td>
+          </tr>
+          <tr>
+            <td>T6273</td>
+            <td>82860</td>
+            <td>Matutino</td>
+            <td>Yanes</td>
+          </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

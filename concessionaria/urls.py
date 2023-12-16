@@ -25,9 +25,9 @@ urlpatterns = [
     path('', include('core.urls')),
 ]
 
-admin.AdminSite.site_header = 'Colégio Carneiro'
-admin.AdminSite.site_title = 'Colégio Carneiro'
-admin.AdminSite.index_title = 'Banco de Dados Colégio Carneiro'
+admin.AdminSite.site_header = 'Nota Certa'
+admin.AdminSite.site_title = 'Nota Certa'
+admin.AdminSite.index_title = 'Nota Certa Database'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
