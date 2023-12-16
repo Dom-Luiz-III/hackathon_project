@@ -20,3 +20,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Django gunicorn pytz sqlparse whitenoise

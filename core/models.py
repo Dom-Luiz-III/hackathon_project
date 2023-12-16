@@ -10,6 +10,18 @@ class Professor(models.Model):
 
     def __str__(self):
         return self.prof_nome
+    
+class Aluno(models.Model):
+    alu_nome = models.CharField('Nome do aluno',max_length=100)
+    alu_email = models.CharField('Email do aluno',max_length=100)
+    alu_senha = models.CharField('Senha do aluno',max_length=100)
+    prof_disciplina = models.CharField('Disciplina do Professor', max_length=20, choices=[
+        ('geografia', 'Geografia'), ('historia', 'História'), ('matematica', 'Matemática'), ('geometria', 'Geometria'), ('portugues', 'Português'), ('ingles', 'Inglês'), ('fisica', 'Física'), ('quimica', 'Química')])
+    prof_foto = models.ImageField(
+        'Foto', upload_to='professores/', null=True, blank=True)
+
+    def __str__(self):
+        return self.alu_nome
 
 
 class Atividade(models.Model):
@@ -33,3 +45,14 @@ class Turma(models.Model):
 
     def __str__(self):
         return f"Turma {self.turma_codigo}"
+    
+class AutoAvaliacao(models.Model):
+    auto_nome = models.CharField('Nome da Atividade',max_length=100)
+    descricao = models.TextField('Descrição da Atividade')
+    pontos = models.IntegerField('Quantos pontos valem a atividade')
+    data_entrega = models.DateField('Data de Entrega')
+
+    def __str__(self):
+        return self.nome_atividade
+    
+
