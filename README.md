@@ -1,6 +1,5 @@
 # Descrição:
-A avaliação realizada pela SAEP tendo como intenção realizar um aplicativo web ou desktop para um sitema de ensino.
-Para realização dessa tarefa eu utilizei o Django Framework para a integração, deixei o SQlite como linguagem padrão para o banco de dados e o Bootstrap como Framework Front End.
+Projeto Hackathon realizado pelo SENAI com o objetivo de criar uma página promovendo avaliações imparcias e objetivas no ambiente escolar
 
 ---
 # Como executar:
