@@ -2,12 +2,14 @@ from django.db import models
 
 
 class Professor(models.Model):
-    nome_professor = models.CharField('Nome do professor',max_length=100)
-    disciplina = models.CharField('Disciplina do Professor', max_length=20, choices=[
+    prof_nome = models.CharField('Nome do professor',max_length=100)
+    prof_disciplina = models.CharField('Disciplina do Professor', max_length=20, choices=[
         ('geografia', 'Geografia'), ('historia', 'História'), ('matematica', 'Matemática'), ('geometria', 'Geometria'), ('portugues', 'Português'), ('ingles', 'Inglês'), ('fisica', 'Física'), ('quimica', 'Química')])
+    prof_foto = models.ImageField(
+        'Foto', upload_to='professores/', null=True, blank=True)
 
     def __str__(self):
-        return self.nome_professor
+        return self.prof_nome
 
 
 class Atividade(models.Model):
