@@ -21,6 +21,8 @@ Com tudo instalado, execute o comando "python manage.py runserver" na pasta "JM_
 </p>
 </details>
 
+---
+
 <details>
   <summary> <b> Tecnologias que foram utilizadas </b> </summary>
 <p>
