@@ -25,7 +25,6 @@ class Atividade(models.Model):
 class Turma(models.Model):
 
     turma_codigo = models.CharField('Codigo da turma', max_length=100)
-    aluno_quantidade = models.IntegerField('Quantidade de alunos')
     numero_sala_turma = models.IntegerField('Numero da sala da turma')
     turma_turno = models.CharField('Turno', max_length=20, choices=[
         ('matutino', 'Matutino'), ('vespertino', 'Vespertino'), ('noturno', 'Noturno')])
